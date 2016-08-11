@@ -9,29 +9,10 @@ if(!empty($this->Session->read('Client'))) {
 <!-- Main Slider -->
 
 
-<div id="room-details-slider">
-  <?php
-  if(!empty($room['RoomPhoto'])) {
-    $aux = 1;
-    foreach($room['RoomPhoto'] as $photos) {
-      ?>
-      <div class="items">
-        <img src="<?php echo $photos['url'];?>" alt="<?php echo $aux;?>"/><!-- Change the URL section based on your image\'s name -->
-      </div>
-      <?php
-      $aux++;
-    }
-  } else {
-    ?>
-    <div class="items">
-      <img src="/assets/img/rooms/1.jpg" />
-    </div>
-    <?php
-  }
-  ?>
-</div>
+
 
 <div class="booking-title-box">
+  <div style="margin-top:50px;"></div>
   <div class="booking-title-box-inner container">
     <!-- Heading box -->
     <div class="heading-box">
@@ -92,4 +73,38 @@ if(!empty($this->Session->read('Client'))) {
     <li><i class="fa fa-check"></i>Max 2 people</li>
     <li><i class="fa fa-check"></i>Sea View</li>
   </ul>-->
+</div>
+<div class="heading-box">
+  <h2>Foto <span>Galería</span></h2><!-- Title -->
+</div>
+<!-- Service Slider -->
+<div id="services-box" class="owl-carousel owl-theme">
+  <?php
+  if(!empty($room['RoomPhoto'])) {
+    $aux = 1;
+    foreach($room['RoomPhoto'] as $photos) {
+      ?>
+      <div class="item">
+        <img src="<?php echo $photos['url'];?>" alt="<?php echo $aux;?>"/><!-- Change the URL section based on your image\'s name -->
+        <div class="title">International <span>Restaurant</span></div>
+        <div class="short-desc">
+          Short description about the services of your hotel can be located in this section.
+        </div>
+      </div>
+      <?php
+      $aux++;
+    }
+  } else {
+    ?>
+    <div class="item">
+      <img src="/assets/img/rooms/1.jpg" />
+      <div class="title">Suite <span>sin foto</span></div>
+      <div class="short-desc">
+        Foto por default
+      </div>
+    </div>
+    <?php
+  }
+  ?>
+
 </div>
