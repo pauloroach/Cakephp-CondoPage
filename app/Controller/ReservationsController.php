@@ -169,32 +169,35 @@ class ReservationsController extends AppController {
   }
 
   public function reserve($id = null) {
-    //$this->layout = "search";
-    $validVariables = $this->validateSessionVariables();
-    if(!empty($id) && $validVariables) {
-      $this->Session->write('Room.id', $id);
+    if($this->request->is('post')) {
+      //check all parameters and make a temporary reservations
+      
 
+    } else {
+      //$this->layout = "search";
+      $validVariables = $this->validateSessionVariables();
+      if(!empty($id) && $validVariables) {
+        $this->Session->write('Room.id', $id);
 
-      $options = array(
-        'recursive' => 0
-      );
-      $amenities = $this->Reservation->Amenity->find('all', $options);
-      if(!empty($amenities)) {
-        $this->set('variables', $validVariables);
-        $this->set('amenities', $amenities);
-
-
-
-
+        $options = array(
+          'recursive' => 0
+        );
+        //Search amenities to offer to customers
+        $amenities = $this->Reservation->Amenity->find('all', $options);
+        if(!empty($validVariables)) {
+          $this->set('variables', $validVariables);
+          $this->set('amenities', $amenities);
+          $this->set('id', $id);
+        } else {
+            return $this->redirect(
+            array('controller' => 'reservations', 'action' => 'unavailable')
+          );
+        }
       } else {
-          return $this->redirect(
+        return $this->redirect(
           array('controller' => 'reservations', 'action' => 'unavailable')
         );
       }
-    } else {
-      return $this->redirect(
-        array('controller' => 'reservations', 'action' => 'unavailable')
-      );
     }
   }
 
@@ -223,15 +226,15 @@ class ReservationsController extends AppController {
         }
       } else {
         return $this->redirect(
+          array('controller' => 'reservations', 'action' => 'unavailable')
+        );
+      }
+    } else {
+      //TODO: send to not valid
+      return $this->redirect(
         array('controller' => 'reservations', 'action' => 'unavailable')
       );
     }
-  } else {
-    //TODO: send to not valid
-    return $this->redirect(
-    array('controller' => 'reservations', 'action' => 'unavailable')
-  );
-  }
   }
 
   public function validateSessionVariables(){

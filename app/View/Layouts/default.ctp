@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/styles.css"><!-- Attach the main stylesheet file -->
 	<link rel="stylesheet" type="text/css" href="/css/custom.css"><!-- Attach the main stylesheet file -->
 	<script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.js"></script>
 </head>
 <body class="homepage trans-header sticky white-datepicker">
 
@@ -40,7 +41,7 @@
 	</div>
 
 	<!-- Include the js files  -->
-	<script type="text/javascript" src="/assets/js/jquery.js"></script>
+
 	<script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="/assets/js/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="/assets/js/jquery.magnific-popup.min.js"></script>

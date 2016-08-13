@@ -2,3 +2,7 @@
   width:180px !important;
   height:80px !important;
 }
+
+aside.sidebar {
+  margin-top:0 !important;
+}

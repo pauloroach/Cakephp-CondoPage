@@ -31,10 +31,10 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-  	
+
   public $conekta_public_key = "key_Qska8zxakgSDxcr7YTDucw";
   public $conekta_private_key = "key_Gs2Ao9ToCxJ1x7v6HUYqnfA";
-  
+
   public $components = array(
       'Flash',
       'Session',

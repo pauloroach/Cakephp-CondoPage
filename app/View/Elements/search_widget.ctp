@@ -1,3 +1,23 @@
+<div class="widget widget_text">
+  <h3 class="side-title"><b>Resumen</b></h3>
+  <p><b>Suite: </b>Deluxe Front Beach</p>
+  <p><b>Llegada: </b> 28-Agosto-2016</p>
+  <p><b>Salida: </b> 3-Septiembre-2016</p>
+  <p><b>Noches: </b> 5 noches y 6 días</p>
+  <p><b>Adultos: </b> 3</p>
+  <p><b>Niños: </b> 0</p>
+  <br/>
+  <div style="border:1px solid black;"></div>
+  <br/>
+  <p><b>Hospedaje: </b> $1,100.00</p>
+  <p><b>IVA 16%: </b> $245.00</p>
+  <p><b>IESH 3%: </b> $89.00</p>
+  <div style="border:1px solid black;"></div>
+  <br/>
+  <h4><b>TOTAL:  $1,408.00 MXN</b></h4>
+</div>
+
+
 <!-- Text Widget -->
 <?php
 if(!empty($this->Session->read('Client'))) {
